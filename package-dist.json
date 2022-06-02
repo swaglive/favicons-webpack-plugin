@@ -39,10 +39,6 @@
     "parse5": "^6.0.1"
   },
   "peerDependencies": {
-    "webpack": "^5.0.0",
     "favicons": "^7.0.0-beta.4"
-  },
-  "optionalDependencies": {
-    "html-webpack-plugin": ">=5.0.0"
   }
 }
