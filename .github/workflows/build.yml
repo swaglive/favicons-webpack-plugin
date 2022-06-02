@@ -1,0 +1,27 @@
+name: build for package
+
+on:
+  push:
+    branches:
+      - 'feature/customized-favicons'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Copy files
+        run: |
+          mkdir dist
+          cp package-dist.json dist/package.json
+          cp -r src dist
+
+      - name: Release
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: customized-favicons
