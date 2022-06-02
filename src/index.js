@@ -557,7 +557,7 @@ function getHtmlWebpackPluginVersion() {
  */
 async function loadFaviconsLibrary() {
   try {
-    return await import('@esm-to-es5/favicons');
+    return await import('favicons');
   } catch (e) {
     throw new Error(
       `Could not find the npm peerDependency "favicons".\nPlease run:\nnpm i favicons\n - or -\nyarn add favicons\n\n${String(
